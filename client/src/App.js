@@ -1,23 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import {useState, useEffect} from 'react';
+import {Routes, Route} from 'react-router-dom';
+import Nav from "./Nav"
+import Home from "./Home"
+import Signup from './Signup';
+import Login from './Login';
+import WorkoutDisplay from './WorkoutDisplay';
+import Food from './Food';
+import FoodForm from './FoodForm';
 
 function App() {
+  const [user, setUser] = useState(null)
+  const [workouts, setWorkouts] = useState([])
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+
+  function handleLogin(user) {
+    setUser(user);
+  }
+
+  useEffect(()=> {
+    fetch ("/workouts")
+    .then(res => res.json())
+    .then(data => setWorkouts(data))
+    },[])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <Routes>
+      <Route path="/" element= {<Home />} />
+      <Route path="signup" element= {<Signup />} />
+      <Route path="signin" element= {<Login handleLogin={handleLogin} setUser={setUser}/>} />
+      <Route path="workouts" element={<WorkoutDisplay workouts={workouts}/>}/>
+      {/* <Route path="food" element={<Food />}/> */}
+      {/* <Route path="foodform" element={<FoodForm />}/> */}
+      </Routes >
     </div>
   );
 }
