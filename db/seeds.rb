@@ -31,7 +31,7 @@ Workout.create([{
     name: "Fire Hydrants",
     reps: "20-25",
     sets: "4",
-    image: "https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Fire-Hydrant_600x600.png?v=1656402231",
+    image: "https://cdn.shopify.com/s/files/1/0425/4210/4739/articles/Glute_Kickback_2400x.jpg?v=1595200895",
     difficulty_level: "beginner",
     fav: false,
 },

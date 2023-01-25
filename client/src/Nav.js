@@ -17,10 +17,10 @@ function Nav() {
             Workouts
         </Link>
         <Link style = {{textDecoration: 'none', color:'black', padding: "10px"}} to='food'>
-            Foods I've Eaten
+            Food History
         </Link>
         <Link style = {{textDecoration: 'none', color:'black', padding: "10px"}} to='foodform'>
-            Add New Foods
+            Log New Foods
         </Link>
     </div>
   )

@@ -1,8 +1,13 @@
 import React from 'react'
 
 function FoodCard() {
+  // const{} = food
+
   return (
-    <div>FoodCard</div>
+    <div id="food-card">
+      <h2></h2>
+
+    </div>
   )
 }
 export default FoodCard;

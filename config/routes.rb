@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :foods
+  resources :foods, only: [:index, :create]
   resources :descriptions
   resources :workout_descriptions
   resources :user_foods
-  resources :comments
+  resources :comments, only: [:index]
   resources :users, only: [:create]
   resources :muscle_groups
   resources :workout_muscle_groups

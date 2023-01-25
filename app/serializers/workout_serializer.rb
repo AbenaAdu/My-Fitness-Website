@@ -3,4 +3,6 @@ class WorkoutSerializer < ActiveModel::Serializer
 
   has_many :descriptions
   has_many :comments
+  has_many :muscle_groups
+  has_many :users
 end

@@ -12,6 +12,8 @@ import FoodForm from './FoodForm';
 function App() {
   const [user, setUser] = useState(null)
   const [workouts, setWorkouts] = useState([])
+  const [comments, setComments] = useState([])
+  const [searchWorkouts, setSearchWorkouts] = useState('')
 
   useEffect(() => {
     // auto-login
@@ -32,16 +34,24 @@ function App() {
     .then(data => setWorkouts(data))
     },[])
 
+  useEffect(()=> {
+    fetch ("/comments")
+    .then(res => res.json())
+    .then(data => setComments(data))
+    },[])
+
+    
+
   return (
     <div className="App">
       <Nav />
       <Routes>
       <Route path="/" element= {<Home />} />
       <Route path="signup" element= {<Signup />} />
-      <Route path="signin" element= {<Login handleLogin={handleLogin} setUser={setUser}/>} />
-      <Route path="workouts" element={<WorkoutDisplay workouts={workouts}/>}/>
-      {/* <Route path="food" element={<Food />}/> */}
-      {/* <Route path="foodform" element={<FoodForm />}/> */}
+      <Route path="signin" element= {<Login onLogin={handleLogin} setUser={setUser}/>} />
+      <Route path="workouts" element={<WorkoutDisplay workouts={workouts} comments={comments}/>}/>
+      <Route path="food" element={<Food />}/>
+      <Route path="foodform" element={<FoodForm />}/>
       </Routes >
     </div>
   );
