@@ -1,12 +1,12 @@
 import {useState} from 'react'
+import {Link} from 'react-router-dom'
 
 
 function Login({onLogin, setUser}) {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [error, setError] = useState(false)
+    const [errors, setErrors] = useState(false)
     const [success, setSuccess] = useState(false)
-    const [signout,setSignout] = useState(false)
 
     function handleSubmit(e) {
       e.preventDefault();
@@ -21,20 +21,24 @@ function Login({onLogin, setUser}) {
         .then(data => {
           if (data.id) {
               onLogin(data)
-              setError(false)
               setSuccess(true)
+              setErrors(false)
               // error handling 
           } else if (data.errors) {
-              setError(data.errors)
+              setErrors(data.errors)
+              setSuccess(false)
           }
         })
   }
 
+
+  
   return (
-    <form onSubmit={handleSubmit}>
-    <h3>Login</h3>
-    {error ? error : " "}
-    {success ? `Welcome, ${username}!` : " "}
+    <div>
+    <form className="form" onSubmit={handleSubmit}>
+    <h1>Login</h1>
+    <p>{errors ? errors : " "}</p>
+    <p>{success ? `Welcome, ${username}!` : " "}</p>
     <label htmlFor="username">Username: </label>
     <input
       type="text"
@@ -51,6 +55,10 @@ function Login({onLogin, setUser}) {
     />
     <button type="submit">Login</button>
   </form>
+  <Link to='/signup' style = {{textDecoration: 'none', color:'black', padding: "10px"}}>
+      Don't have an Account? Click here to Sign Up
+    </Link>
+  </div>
   )
 }
 export default Login;

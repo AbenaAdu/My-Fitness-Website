@@ -5,9 +5,257 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('https://images.everydayhealth.com/images/everything-you-need-know-about-fitness-1440x810.jpg');
+  background-attachment: fixed;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.infoBar {
+  background-color: rgba(94, 138, 162, 0.594);
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.infoBar ul{
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.infoBar li{
+  list-style: none;
+  text-decoration: none;
+  color: white;
+  padding: 0.5rem;
+  display: block;
+  text-align: center;
+}
+
+.nav-button{
+  transition-duration: 0.4s;
+  text-decoration: none;
+  border: none;
+  list-style: none;
+  text-align: center;
+  font-size: 25px;
+}
+
+.nav-button:hover{
+  background-color: rgb(33, 44, 144);
+}
+
+.searchbar input{
+  margin: 10px;
+  padding: 10px 10px;
+  border-radius: 24px;
+  border: none;
+}
+
+div img{
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+.fav-workout-img{
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.fav-workout-card {
+  border-style: solid;
+  border-radius: 15px 15px 15px;
+  margin: auto;
+  width: 200px;
+  background-color: rgba(166, 161, 161, 0.628);
+  margin-bottom: 100px;
+  height: 300px;
+  margin-top: 30px;
+  font-family: Georgia, serif;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  filter: drop-shadow(0 0 0.75rem rgb(211, 110, 159));
+}
+#food-card{
+  border-style: solid;
+  border-radius: 15px 15px 15px;
+  margin: auto;
+  width: 200px;
+  background-color: rgba(166, 161, 161, 0.628);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  filter: drop-shadow(0 0 0.75rem rgb(37, 181, 18));
+  margin-bottom: 100px;
+  height: 200px;
+  margin-top: 30px;
+  font-family: Georgia, serif;
+}
+.workout-card {
+  border-style: solid;
+  border-radius: 15px 15px 15px;
+  margin: auto;
+  width: 300px;
+  background-color: rgba(166, 161, 161, 0.628);
+  margin-bottom: 100px;
+  height: 300px;
+  margin-top: 30px;
+  font-family: Georgia, serif;
+  overflow: auto;
+}
+.workout-card:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  filter: drop-shadow(0 0 0.75rem blue);
+  } 
+
+
+
+  #add-to-cart, #delete-title {
+    margin-right: 15px;
+    text-decoration: none;
+    padding: 10px;
+    display: inline;
+    font-family: fantasy;
+    text-align: center;
+    font-weight: bolder;
+    border-radius: 30px;
+    border: none;
+    
+  }
+  
+  #fav-workout{
+    transition: all .2s ease-in-out;
+    margin: 10px
+  }
+  
+  #fav-workout:hover {
+    transform: scale(1.1);
+    color: rgb(214, 16, 122);
+  }
+  #delete-workout {
+    transition: all .2s ease-in-out;
+    margin: 10px
+  }
+  #delete-workout:hover {
+    transform: scale(1.1);
+    color: rgb(179, 19, 19);
+  }
+
+  #home h1{
+    font-family: Georgia, serif;
+    font-size: 100px;
+    text-shadow: 10px 10px #599ea5;
+  }
+
+  #home-text{
+    font-family: Georgia, serif;
+    font-size: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: rgba(166, 161, 161, 0.628);
+  border-style: solid;
+  border-radius: 15px 15px 15px;
+  margin: auto;
+  width: 75%
+  }
+
+  #logout{
+    text-align: center;
+    padding: 10px;
+    border-style: none;
+    border-radius: 15px 15px 15px;
+  
+
+  }
+
+  #home-additional{
+    font-size: large;
+    margin: 10px;
+    font-weight: bold;
+    color: red;
+  }
+
+  .form {
+    margin-top: 100px;
+    margin-left: 200px;
+    width: 800px;
+    margin-bottom: 100px; 
+    overflow: auto;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    width: 50vw;
+    display: flex;  
+    text-align: center;
+    top: 10%;
+    left: 25%;
+    /* margin-top: -70px;
+    margin-left: -330px */
+  }
+  .form input {
+   align-items: flex-start;
+    flex-direction: column;
+    text-align: center;
+    margin: 10px 0 20px 0;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px 4px;
+    width: 200px;
+    padding: 15px;
+    background-color: #1abc2788;
+    color: rgb(240, 248, 255);
+    /* font-family: 'Russo One', sans-serif; */
+    font-weight: bolder;
+    font-size: 1.2rem;
+    border-radius: 24px;
+    border: none;
+    font-family: Georgia, serif;
+    
+  }
+  
+  .form-link {
+    margin-top: -10px;
+  }
+  
+  .form button {
+    text-align: center;
+    border: none;
+    padding: 10px;
+    transition: all .2s ease-in-out;
+    border-radius: 24px;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    width: 30%;
+    background-color: #50b80f88;
+    color: white;
+    transition: all .2s ease-in-out;
+  }
+  .form button:hover {
+    transform: scale(1.2);
+  
+  }
+  .form p{
+    font-family: Georgia, serif;
+    font-size: 30px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  background-color: rgba(166, 161, 161, 0.628);
+  border-style: solid;
+  border-radius: 15px 15px 15px;
+  margin: auto;
+  width: auto;
+  
+  }
+  
+  

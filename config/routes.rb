@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
   resources :muscle_groups
   resources :workout_muscle_groups
-  resources :workouts, only: [:index]
+  resources :workouts, only: [:index, :update, :destroy, :create]
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/me", to: "users#show"

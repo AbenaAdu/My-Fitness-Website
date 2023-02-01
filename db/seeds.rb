@@ -16,7 +16,7 @@ Workout.create([{
    reps: "6-8",
    sets: "4",
    image: "https://media.self.com/photos/616f19f946e2eb217d91ef30/4:3/w_3479,h_2609,c_limit/Shauna_Bear_Crawl_MG_7998.jpg",
-   difficulty_level: "intermediate",
+   difficulty_level: "Intermediate",
    fav: false,
 }, 
 { 
@@ -24,7 +24,7 @@ Workout.create([{
     reps: "8",
     sets: "4",
     image: "https://www.verywellfit.com/thmb/A7pSeN273IHboeOIf4kx9M1oUpw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/About-2A15-TricepDips-935-e3cd3eddc0c149fc91299b420aa6b236.jpg",
-    difficulty_level: "beginner",
+    difficulty_level: "Beginner",
     fav: false,
 },
 { 
@@ -32,7 +32,7 @@ Workout.create([{
     reps: "20-25",
     sets: "4",
     image: "https://cdn.shopify.com/s/files/1/0425/4210/4739/articles/Glute_Kickback_2400x.jpg?v=1595200895",
-    difficulty_level: "beginner",
+    difficulty_level: "Beginner",
     fav: false,
 },
 {
@@ -40,7 +40,7 @@ Workout.create([{
     reps: "25-30",
     sets: "3",
     image: "https://www.wikihow.com/images/thumb/1/12/Do-a-Glute-Kickback-Step-2.jpg/v4-460px-Do-a-Glute-Kickback-Step-2.jpg",
-    difficulty_level: "beginner",
+    difficulty_level: "Beginner",
     fav: false,
  }, 
  {
@@ -48,7 +48,7 @@ Workout.create([{
     reps: "30 sec hold",
     sets: "3",
     image: "https://www.verywellfit.com/thmb/6hvBJmXEkXu9TP7uIzTVSt47ae8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Verywell-11-3567193-Plank-679-74ff050ef03e477bab8e4317010f77f3.jpg",
-    difficulty_level: "beginner",
+    difficulty_level: "Beginner",
     fav: false,
  },
  {
@@ -56,7 +56,7 @@ Workout.create([{
     reps: "5",
     sets: "4",
     image: "https://www.sportsperformancept.com/wp-content/uploads/2018/07/IMG-0612.jpg",
-    difficulty_level: "difficult",
+    difficulty_level: "Advanced",
     fav: false,
  }
     ])
@@ -140,6 +140,11 @@ Food.create([
     calories: 1000,
     name: "Popeyes medium meal",
     time: "7:30 pm"
+},
+{ 
+    calories: 280,
+    name: "Frosted Flakes Cereal",
+    time: "7:30 am"
 }
 ])
 
@@ -193,6 +198,10 @@ UserFood.create([
 { 
     user_id: User.third.id,
     food_id: Food.third.id
+},
+{ 
+    user_id: User.fourth.id,
+    food_id: Food.fourth.id
 }
 ])
 
